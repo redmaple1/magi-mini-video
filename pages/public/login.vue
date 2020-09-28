@@ -1,44 +1,41 @@
 <template>
-	<view class="container">
-		<view class="input-content">
-			<view class="input-item">
-				<text class="tit">账号</text>
-				<input type="text" placeholder="请输入账号" />
+	<view class="login">
+		<view class="content">
+			<!-- 主体表单 -->
+			<view class="main">
+				<winput
+				  type="text"
+				  maxlength="11"
+				  placeholder="用户名"
+				></winput>
+				<winput
+				 type="password"
+				 placeholder="密码"
+				></winput>
 			</view>
 		</view>
+	</view>
 	</view>
 </template>
 
 <script>
-</script>
-
-<style lang='scss'>
-	.container {
-		padding-top: 115px;
-		position: relative;
-		width: 100vw;
-		height: 100vh;
-		overflow: hidden;
-		background: #fff;
-	}
+	var _this;
+	import winput from '../../components/watch-login/watch-input.vue'
 	
-	.input-content{
-		padding: 0 60upx;
-	}
-
-	.input-item {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 0 30upx;
-		border: 1upx solid;
-		border-radius: 15upx;
-		border-color: $uni-border-color;
-		height: 100upx;
-		.tit{
-			height: 80upx;
-			line-height: 100upx;
-			font-size: $font-base;
+	export default{
+		data(){
+			phoneData:''
+		},
+		components:{
+			winput
+		},
+		mounted(){
+			_this = this;
 		}
 	}
+</script>
+
+<style>
+	@import url("../../components/watch-login/css/icon.css");
+	@import url("./css/main.css");
 </style>
